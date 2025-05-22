@@ -20,3 +20,8 @@ body {
 .bag-image {
     width: 100px;
 }
+
+.bag-image:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
