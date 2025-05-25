@@ -49,7 +49,21 @@ body {
     width: 50px
 }
 
+.mid-section h4 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.mid-section p {
+    margin: 0;
+}
+
 .boxingbag-img {
     width: 10px
-    
+}
+
+.cost-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
