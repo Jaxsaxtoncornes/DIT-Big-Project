@@ -34,6 +34,22 @@ body {
     transform: scale(1.02);
 }
 
+.upgrade {
+    display: flex;
+    align-items: center;
+    justify-items: space-between;
+    width: 330px;
+    height: 60px;
+    border: 4px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
 .upgrade-img {
+    width: 50px
+}
+
+.boxingbag-img {
+    width: 10px
     
 }
