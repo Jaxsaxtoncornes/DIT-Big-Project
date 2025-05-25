@@ -51,15 +51,25 @@ body {
 
 .mid-section h4 {
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    margin-left: 40px;
 }
 
 .mid-section p {
     margin: 0;
+    margin-left: 40px;
+}
+
+.right-section {
+    margin-left: 40px
 }
 
 .boxingbag-img {
-    width: 10px
+    width: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 0px;
 }
 
 .cost-info {
