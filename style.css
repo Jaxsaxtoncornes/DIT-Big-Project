@@ -81,5 +81,14 @@ body {
 
 .next-level-info {
     position: absolute;
-    right: -100px;
+    right: -104px;
+    background-color: rgb(90, 89, 90);
+    height: 80px;
+    width: 100px;
+    text-align: center;
+    display: none;
+}
+
+.upgrade:hover .next-level-info {
+    display: block;
 }
