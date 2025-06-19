@@ -44,6 +44,7 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .upgrade-img {
@@ -82,7 +83,8 @@ body {
 .next-level-info {
     position: absolute;
     right: -104px;
-    background-color: rgb(90, 89, 90);
+    background-color: black;
+    color: white;
     height: 80px;
     width: 100px;
     text-align: center;
