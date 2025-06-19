@@ -15,8 +15,7 @@ function incrementStrength() {
 
 function buyDrink() {
 if (parsedStrength >= parsedClickerCost) {
-    parsedStrength -= parsedClickerCost
-    strength.innerHTML = parsedStrength;
+    strength.innerHTML = Math.round(parsedStrength -= parsedClickerCost);
 
     drinklevel.innerHTML ++
 
