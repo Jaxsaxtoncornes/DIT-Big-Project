@@ -24,5 +24,8 @@ if (parsedStrength >= parsedClickerCost) {
     drinkIncrease.innerHTML = parsedClickerIncrease;
 
     spc += parsedClickerIncrease;
+
+    parsedClickerCost *= 1.18;
+    ClickerCost.innerHTML = Math.round(parsedClickerCost)
     }
 }
