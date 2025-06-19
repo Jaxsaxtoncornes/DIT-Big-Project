@@ -10,8 +10,7 @@ let parsedClickerIncrease = parseFloat(drinkIncrease.innerHTML)
 let spc = 1;
 
 function incrementStrength() {
-    parsedStrength += spc;
-    strength.innerHTML = parsedStrength;
+    strength.innerHTML = Math.round(parsedStrength += spc);
 }
 
 function buyDrink() {
@@ -21,7 +20,7 @@ if (parsedStrength >= parsedClickerCost) {
 
     drinklevel.innerHTML ++
 
-    parsedClickerIncrease = parsedClickerIncrease * 1.03;
+    parsedClickerIncrease = parseFloat((parsedClickerIncrease * 1.03).toFixed(2));
     drinkIncrease.innerHTML = parsedClickerIncrease;
 
     spc += parsedClickerIncrease;
