@@ -15,6 +15,8 @@ let parsedProteinBarIncrease = parseFloat(proteinbarIncrease.innerHTML)
 
 let spc = 1;
 
+let sps = 0;
+
 function incrementStrength() {
     strength.innerHTML = Math.round(parsedStrength += spc);
 }
@@ -44,9 +46,14 @@ if (parsedStrength >= parsedProteinBarCost) {
     parsedProteinBarIncrease = parseFloat((parsedProteinBarIncrease * 1.03).toFixed(2));
     proteinbarIncrease.innerHTML = parsedProteinBarIncrease;
 
-    spc += parsedProteinBarIncrease;
+    sps += parsedProteinBarIncrease;
 
     parsedProteinBarCost *= 1.30;
     ProteinBarCost.innerHTML = Math.round(parsedProteinBarCost)
     }
 }
+
+setInterval(() => {
+    parsedStrength += sps
+    strength.innerHTML = Math.round(parsedStrength)
+}, 1000)
