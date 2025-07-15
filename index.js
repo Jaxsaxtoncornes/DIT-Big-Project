@@ -24,7 +24,7 @@ if (parsedStrength >= parsedClickerCost) {
 
     spc += parsedClickerIncrease;
 
-    parsedClickerCost *= 1.18;
+    parsedClickerCost *= 1.30;
     ClickerCost.innerHTML = Math.round(parsedClickerCost)
     }
 }
