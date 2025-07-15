@@ -7,6 +7,12 @@ let drinklevel = document.querySelector('.drink-level')
 let drinkIncrease = document.querySelector('.drink-increase')
 let parsedClickerIncrease = parseFloat(drinkIncrease.innerHTML)
 
+let ProteinBarCost = document.querySelector('.drink-cost')
+let parsedProteinBarCost = parseFloat(ProteinBarCost.innerHTML)
+let proteinbarlevel = document.querySelector('.drink-level')
+let proteinbarIncrease = document.querySelector('.drink-increase')
+let parsedProteinBarIncrease = parseFloat(drinkIncrease.innerHTML)
+
 let spc = 1;
 
 function incrementStrength() {
