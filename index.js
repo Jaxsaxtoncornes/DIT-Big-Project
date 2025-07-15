@@ -7,11 +7,11 @@ let drinklevel = document.querySelector('.drink-level')
 let drinkIncrease = document.querySelector('.drink-increase')
 let parsedClickerIncrease = parseFloat(drinkIncrease.innerHTML)
 
-let ProteinBarCost = document.querySelector('.drink-cost')
+let ProteinBarCost = document.querySelector('.proteinbar-cost')
 let parsedProteinBarCost = parseFloat(ProteinBarCost.innerHTML)
-let proteinbarlevel = document.querySelector('.drink-level')
-let proteinbarIncrease = document.querySelector('.drink-increase')
-let parsedProteinBarIncrease = parseFloat(drinkIncrease.innerHTML)
+let proteinbarlevel = document.querySelector('.proteinbar-level')
+let proteinbarIncrease = document.querySelector('.proteinbar-increase')
+let parsedProteinBarIncrease = parseFloat(proteinbarIncrease.innerHTML)
 
 let spc = 1;
 
@@ -32,5 +32,21 @@ if (parsedStrength >= parsedClickerCost) {
 
     parsedClickerCost *= 1.30;
     ClickerCost.innerHTML = Math.round(parsedClickerCost)
+    }
+}
+
+function buyProteinBar() {
+if (parsedStrength >= parsedProteinBarCost) {
+    strength.innerHTML = Math.round(parsedStrength -= parsedProteinBarCost);
+
+    proteinbarlevel.innerHTML ++
+
+    parsedProteinBarIncrease = parseFloat((parsedProteinBarIncrease * 1.03).toFixed(2));
+    proteinbarIncrease.innerHTML = parsedProteinBarIncrease;
+
+    spc += parsedProteinBarIncrease;
+
+    parsedProteinBarCost *= 1.30;
+    ProteinBarCost.innerHTML = Math.round(parsedProteinBarCost)
     }
 }
