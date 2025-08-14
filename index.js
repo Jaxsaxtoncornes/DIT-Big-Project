@@ -13,6 +13,11 @@ let proteinbarlevel = document.querySelector('.proteinbar-level')
 let proteinbarIncrease = document.querySelector('.proteinbar-increase')
 let parsedProteinBarIncrease = parseFloat(proteinbarIncrease.innerHTML)
 
+let PreWorkoutCost = document.querySelector('.proteinbar-cost')
+let parsedPreWorkoutCost = parseFloat(ProteinBarCost.innerHTML)
+let PreWorkoutlevel = document.querySelector('.proteinbar-level')
+let PreWorkoutIncrease = document.querySelector('.proteinbar-increase')
+let parsedPreWorkoutIncrease = parseFloat(proteinbarIncrease.innerHTML)
 let spc = 1;
 
 let sps = 0;
@@ -53,7 +58,18 @@ if (parsedStrength >= parsedProteinBarCost) {
     }
 }
 
+function buyPreWorkout() {
+    if (parsedStrength >= parsedPreWorkoutCost ) {
+        strength.innerHTML = Math.round(parsedStrength -= parsedPreWorkoutCost);
+
+        PreWorkoutlevel.innerHTML ++
+
+        parsedProteinBarIncrease = parseFloat((parsedPreWorkoutIncrease ))
+
+    }
+}
+
 setInterval(() => {
     parsedStrength += sps
     strength.innerHTML = Math.round(parsedStrength)
-}, 1000)
+}, 250)
