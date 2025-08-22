@@ -64,9 +64,14 @@ function buyPreWorkout() {
 
         PreWorkoutlevel.innerHTML ++
 
-        parsedProteinBarIncrease = parseFloat((parsedPreWorkoutIncrease ))
+        parsedProteinBarIncrease = parseFloat((parsedPreWorkoutIncrease * 1.03).toFixed(2));
+        PreWorkoutIncrease.innerHTML = parsedPreWorkoutIncrease;
 
-    }
+        sps += parsedPreWorkoutIncrease;
+
+        parsedPreWorkoutCost *= 1.30;
+        PreWorkoutCost.innerHTML = Math.round(parsedPreWorkoutCost)
+        }
 }
 
 setInterval(() => {
