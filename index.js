@@ -12,3 +12,10 @@ let strengthImgContainer = document.querySelector(".strength-img-container");
 let upgradesNavButton = document.getElementById("upgrade-nav-button");
 let skillsNavButton = document.getElementById("skills-nav-button");
 let artifactsNavButton = document.getElementById("artifacts-nav-button");
+
+let prestigeButton = document.querySelector(".prestiege-button");
+
+let medal = document.getElementById("medal");
+
+let spc = 1;
+let sps = 0;
