@@ -19,3 +19,6 @@ let medal = document.getElementById("medal");
 
 let spc = 1;
 let sps = 0;
+
+const bgm = new Audio("/assests/audio/bgm.mp3");
+bgm.volume = 0;
