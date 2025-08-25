@@ -1,24 +1,80 @@
-import { powerUpIntervals, upgrades } from "./constants/upgrades.js";
-import { defaultSkillValues, defaultUpgradeValues } from "./constants/defaultValues.js";
+let strength = document.querySelector('.strength-cost')
+let parsedStrength = parseFloat(strength.innerHTML)
 
-let strength = document.querySelector(".strength");
-let parsedStrength = parseFloat(strength.innerHTMl);
+let ClickerCost = document.querySelector('.drink-cost')
+let parsedClickerCost = parseFloat(ClickerCost.innerHTML)
+let drinklevel = document.querySelector('.drink-level')
+let drinkIncrease = document.querySelector('.drink-increase')
+let parsedClickerIncrease = parseFloat(drinkIncrease.innerHTML)
 
-let spcText = document.getElementById("spc-text");
-let spsText = document.getElementById("sps-text");
+let ProteinBarCost = document.querySelector('.proteinbar-cost')
+let parsedProteinBarCost = parseFloat(ProteinBarCost.innerHTML)
+let proteinbarlevel = document.querySelector('.proteinbar-level')
+let proteinbarIncrease = document.querySelector('.proteinbar-increase')
+let parsedProteinBarIncrease = parseFloat(proteinbarIncrease.innerHTML)
 
-let strengthImgContainer = document.querySelector(".strength-img-container");
-
-let upgradesNavButton = document.getElementById("upgrade-nav-button");
-let skillsNavButton = document.getElementById("skills-nav-button");
-let artifactsNavButton = document.getElementById("artifacts-nav-button");
-
-let prestigeButton = document.querySelector(".prestiege-button");
-
-let medal = document.getElementById("medal");
-
+let PreWorkoutCost = document.querySelector('.proteinbar-cost')
+let parsedPreWorkoutCost = parseFloat(ProteinBarCost.innerHTML)
+let PreWorkoutlevel = document.querySelector('.proteinbar-level')
+let PreWorkoutIncrease = document.querySelector('.proteinbar-increase')
+let parsedPreWorkoutIncrease = parseFloat(proteinbarIncrease.innerHTML)
 let spc = 1;
+
 let sps = 0;
 
-const bgm = new Audio("/assests/audio/bgm.mp3");
-bgm.volume = 0;
+function incrementStrength() {
+    strength.innerHTML = Math.round(parsedStrength += spc);
+}
+
+function buyDrink() {
+if (parsedStrength >= parsedClickerCost) {
+    strength.innerHTML = Math.round(parsedStrength -= parsedClickerCost);
+
+    drinklevel.innerHTML ++
+
+    parsedClickerIncrease = parseFloat((parsedClickerIncrease * 1.03).toFixed(2));
+    drinkIncrease.innerHTML = parsedClickerIncrease;
+
+    spc += parsedClickerIncrease;
+
+    parsedClickerCost *= 1.30;
+    ClickerCost.innerHTML = Math.round(parsedClickerCost)
+    }
+}
+
+function buyProteinBar() {
+if (parsedStrength >= parsedProteinBarCost) {
+    strength.innerHTML = Math.round(parsedStrength -= parsedProteinBarCost);
+
+    proteinbarlevel.innerHTML ++
+
+    parsedProteinBarIncrease = parseFloat((parsedProteinBarIncrease * 1.03).toFixed(2));
+    proteinbarIncrease.innerHTML = parsedProteinBarIncrease;
+
+    sps += parsedProteinBarIncrease;
+
+    parsedProteinBarCost *= 1.30;
+    ProteinBarCost.innerHTML = Math.round(parsedProteinBarCost)
+    }
+}
+
+function buyPreWorkout() {
+    if (parsedStrength >= parsedPreWorkoutCost ) {
+        strength.innerHTML = Math.round(parsedStrength -= parsedPreWorkoutCost);
+
+        PreWorkoutlevel.innerHTML ++
+
+        parsedProteinBarIncrease = parseFloat((parsedPreWorkoutIncrease * 1.03).toFixed(2));
+        PreWorkoutIncrease.innerHTML = parsedPreWorkoutIncrease;
+
+        sps += parsedPreWorkoutIncrease;
+
+        parsedPreWorkoutCost *= 1.30;
+        PreWorkoutCost.innerHTML = Math.round(parsedPreWorkoutCost)
+        }
+}
+
+setInterval(() => {
+    parsedStrength += sps
+    strength.innerHTML = Math.round(parsedStrength)
+}, 250)
