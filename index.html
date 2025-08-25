@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UFT-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combat Clicker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section>
-        <div class="main">
-            <div class="left">
-                <h3>Strength: <span class="strength-cost">0</span></h3>
-                <img src="./Assets/boxing bag.jpg"  alt="" srcset="" class="bag-image" onclick="incrementStrength()" draggable="false" > 
-            </div>
-            <div class="right">
-                <div class="upgrade" onclick ="buyDrink()">
-                    <div class="left-section">
-                        <img src="./Assets/whitemonster.jpg" alt="" class="upgrade-img">
+    <head>
+        <meta charset="UFT-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Combat Clicker</title>
+    </head>
+    <body>
+        <section>
+            <div class="main">
+                <div class="left">
+                    <p>Strength <br /><span class="strength pink-test">1500000</span></p>
+                    <div class="strength-img-container">
+                        <img
+                        src="./Assets/boxing bag.jpg"
+                        alt=""
+                        class="strength-image"
+                        onclick="incrementStrength(event)"
+                        draggable="false"
+                    />
+                </div>
+                </div>
+                
+                <script id="upgrade-template" type="text/template">
+                    <div class="upgrade type-{{type}}" onclick="buyUpgrade('{{name}}')" id="{{name}}-upgrade">
+                        <div class="left-section">
+                            <img
+                            src="{{image}}"
+                            alt=""
+                            class="upgrade-img"
+                        />
                     </div>
                     <div class="mid-section">
-                        <h4>Energy Drink</h4>
+                        <h4>{{name}}</h4>
                         <div class="cost-info">
-                            <p>Cost: <span class="drink-cost">10</span></p>
-                            <img src="./Assets/boxing bag.jpg" alt="" srcset="" class="boxingbag-img">
+                            <p class="cost-text"><span class="{{name}}-cost">{{cost}}</span></p>
+                            <img src="/assets/whitemonster.png" alt="" class="strength-img" />
                         </div>
                     </div>
-                    <div class="right-section">level <span class="drink-level">0</span></div>
+                    <div class="right-section">Level <span class="{{name}}-level">0</span></div>
 
-                    <div class="next-level-info">
-                        <p>
-                            +<span class="drink-increase">1</span> strength <br /> per click
-                        </p>
-                    </div>
-            </div>
-                <div class="upgrade" onclick ="buyProteinBar()">
-                    <div class="left-section">
-                        <img src="./Assets/proteinbar.jpg" alt="" class="upgrade-img">
-                    </div>
-                    <div class="mid-section">
-                        <h4>Protein Bar</h4>
-                        <div class="cost-info">
-                            <p>Cost: <span class="proteinbar-cost">130</span></p>
-                            <img src="./Assets/boxing bag.jpg" alt="" srcset="" class="boxingbag-img">
-                        </div>
-                    </div>
-                    <div class="right-section">level <span class="proteinbar-level">0</span></div>
-
-                    <div class="next-level-info">
-                        <p>
-                            +<span class="proteinbar-increase">4</span> strength <br /> per second
-                        </p>
-                    </div>
-                <div class="upgrade" onclick ="buyPreWorkout()">
-                    <div class="left-section">
-                        <img src="./Assets/proteinbar.jpg" alt="" class="upgrade-img">
-                    </div>
-                    <div class="mid-section">
-                        <h4>Pre Workout</h4>
-                        <div class="cost-info">
-                            <p>Cost: <span class="preworkout-cost">800</span></p>
-                            <img src="./Assets/boxing bag.jpg" alt="" srcset="" class="boxingbag-img">
-                        </div>
-                    </div>
-                    <div class="right-section">level <span class="preworkout-level">0</span></div>
-
-                    <div class="next-level-info">
-                        <p>
-                            +<span class="preworkout-increase">12</span> strength <br /> per second
+                    <div class="next-level-info" id="{{name}}-next-level">
+                        <p id="{{name}}-next-p">
+                            +<span class="{{name}}-increase">{{increase}}</span> strength <br /> per click
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </script>
 
-    <script src="index.js"></script>
-</body>
+            <div class="right">
+                <div class="right-navbar">
+                    <div id="upgrades-nav-button">Upgrade</div>
+                    <div id="skills-nav-button">Supplements</div>
+                    <div id="artifacts-nav-button">Medals</div>
+                </div>
+
+                    <div id="upgrades-container"></div>
+                </div>
+            </div>
+
+            <div class="statistics">
+                <div class="texts">
+                    <p>SPC: <span id="spc-text" class="pink-text">1</span></p>
+                    <p>SPS: <span id="sps-text" class="pink-text">0</span></p>
+                </div>
+            </div>
+
+            <div class="util-buttons">
+                <button class="util-button prestiege-button" onclick="prestige()">Prestige</button>
+                <button class="util-button" onclick="save()">Save</button>
+                <button class="util-button" onclick="load()">Load</button>
+            </div>
+
+            <div class="medal">
+                Medals: <span id="medal">0</span>
+            </div>
+        </section>
+
+        <script type="module" src="index.js"></script>
+    </body>
 </html>
