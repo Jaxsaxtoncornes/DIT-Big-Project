@@ -32,8 +32,9 @@ let PersonalTrainerIncrease = document.querySelector('.personaltrainer-increase'
 let parsedPersonalTrainerIncrease = parseFloat(PersonalTrainerIncrease.innerHTML)
 
 let prestigeMultiplier = 1;
-let prestigeRequirment = 10000;
-let prestige = 0;
+let prestigeRequirement = 10000;
+let prestigeCount = 0;
+let prestigeText = document.getElementById("prestiege-count")
 
 let spcText = document.getElementById("spc-text")
 let spsText = document.getElementById("sps-text")
@@ -141,18 +142,24 @@ function prestige() {
         Creatinelevel.innerHTML = 0;
         PersonalTrainerlevel.innerHTML = 0;
 
-        ClickerCost.innerHTML = 0;
-        ProteinBarCost.innerHTML = 0;
-        PreWorkoutCost.innerHTML = 0;
-        CreatineCost.innerHTML = 0;
-        PersonalTrainerCost.innerHTML = 0;
+        ClickerCost.innerHTML = 10;
+        ProteinBarCost.innerHTML = 130;
+        PreWorkoutCost.innerHTML = 850;
+        CreatineCost.innerHTML = 3350;
+        PersonalTrainerCost.innerHTML = 10000;
 
-        prestigeRequirment = Math.round(prestigeRequirment * 1.5)
+        parsedClickerCost = 10;
+        parsedProteinBarCost = 130;
+        parsedPreWorkoutIncrease = 850;
+        parsedCreatineCost = 3350;
+        parsedPersonalTrainerCost = 10000;
+
+        prestigeRequirment = Math.round(prestigeRequirement * 1.5)
 
         alert(`You prestiged! SPC increased to ${prestigeMultiplier.toFixed(2)}. 
         Next prestige requires ${prestigeRequirement} strength.`);
     } else {
-        alert(`You need ${prestigeRequirment} strength to prestige!`)
+        alert(`You need ${prestigeRequirement} strength to prestige!`)
     }
 }
 
