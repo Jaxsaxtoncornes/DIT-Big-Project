@@ -115,3 +115,17 @@ body {
     font-weight: bold;
     font-size: 22px;
 }
+
+.strength-cost, 
+.drink-cost,
+.proteinbar-cost,
+.preworkout-cost,
+.creatine-cost,
+.personaltrainer-cost,
+#spc-text,
+#sps-text,
+#prestige-count {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+}
