@@ -214,6 +214,11 @@ function prestige() {
 
         updateSPC_SPS();
 
+        spcText.innerHTML = spc.toFixed(2);
+        spsText.innerHTML = sps.toFixed(2);
+        strength.innerHTML = parsedStrength.toFixed(2);
+        prestigeText.innerHTML = prestigeCount;
+
         prestigeRequirement = Math.round(prestigeRequirement * 1.5);
 
         alert(`You prestiged! SPC increased to ${prestigeMultiplier.toFixed(2)}. 
@@ -231,8 +236,8 @@ Next prestige requires ${prestigeRequirement} strength.`);
 setInterval(() => {
     updateSPC_SPS();
     parsedStrength += sps / 10
-    strength.innerHTML = Math.round(parsedStrength)
-    spcText.innerHTML = Math.round(spc)
-    spsText.innerHTML = Math.round(sps);
+    strength.innerHTML = parsedStrength.toFixed(2);
+    spcText.innerHTML = spc.toFixed(2);
+    spsText.innerHTML = sps.toFixed(2);
     prestigeText.innerHTML = prestigeCount;
 }, 100)
