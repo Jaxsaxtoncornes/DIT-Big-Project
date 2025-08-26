@@ -99,4 +99,19 @@ body {
 .statistics {
     position: absolute;
     bottom: 0;
+    width: 450px;
+    padding: 30px;
+    border: 2px white solid;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+.texts {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
 }
