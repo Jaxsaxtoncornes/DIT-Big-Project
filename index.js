@@ -130,7 +130,29 @@ function buyPersonalTrainer() {
 function prestige() {
     if (parsedStrength >= prestigeRequirment) {
         prestigeCount++;
-        prestige
+        prestigeMultiplier += 0.1 /Math.sqrt(prestigeCount);
+        parsedStrength = 0;
+        spc = 1 * prestigeMultiplier;
+        sps = 0;
+
+        drinklevel.innerHTML = 0;
+        proteinbarlevel.innerHTML = 0;
+        PreWorkoutlevel.innerHTML = 0;
+        Creatinelevel.innerHTML = 0;
+        PersonalTrainerlevel.innerHTML = 0;
+
+        ClickerCost.innerHTML = 0;
+        ProteinBarCost.innerHTML = 0;
+        PreWorkoutCost.innerHTML = 0;
+        CreatineCost.innerHTML = 0;
+        PersonalTrainerCost.innerHTML = 0;
+
+        prestigeRequirment = Math.round(prestigeRequirment * 1.5)
+
+        alert(`You prestiged! SPC increased to ${prestigeMultiplier.toFixed(2)}. 
+        Next prestige requires ${prestigeRequirement} strength.`);
+    } else {
+        alert(`You need ${prestigeRequirment} strength to prestige!`)
     }
 }
 
@@ -139,4 +161,5 @@ setInterval(() => {
     strength.innerHTML = Math.round(parsedStrength)
     spcText.innerHTML = Math.round(spc)
     spsText.innerHTML = Math.round(sps);
+    prestigeText.innerHTML = prestigeCount;
 }, 100)
