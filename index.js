@@ -18,6 +18,11 @@ let parsedPreWorkoutCost = parseFloat(PreWorkoutCost.innerHTML)
 let PreWorkoutlevel = document.querySelector('.preworkout-level')
 let PreWorkoutIncrease = document.querySelector('.preworkout-increase')
 let parsedPreWorkoutIncrease = parseFloat(PreWorkoutIncrease.innerHTML)
+
+let spcText = document.getElementById("spc-text")
+let spsText = document.getElementById("sps-text")
+
+
 let spc = 1;
 
 let sps = 0;
@@ -77,4 +82,6 @@ function buyPreWorkout() {
 setInterval(() => {
     parsedStrength += sps / 10
     strength.innerHTML = Math.round(parsedStrength)
+    spcText.innerHTML = Math.round(spc)
+    spsText.innerHTML = Math.round(sps);
 }, 100)
