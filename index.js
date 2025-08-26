@@ -75,6 +75,6 @@ function buyPreWorkout() {
 }
 
 setInterval(() => {
-    parsedStrength += sps
+    parsedStrength += sps / 10
     strength.innerHTML = Math.round(parsedStrength)
-}, 250)
+}, 100)
