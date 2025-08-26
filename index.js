@@ -233,6 +233,37 @@ Next prestige requires ${prestigeRequirement} strength.`);
     prestigeText.innerHTML = prestigeCount;
 }
 
+function saveGame() {
+    const gameData = {
+        strength : parsedStrength,
+        prestige: prestigeMultiplier,
+        prestigeCount: prestigeCount,
+        prestigeRequirement: prestigeRequirement,
+        drinklevel: parseInt(drinklevel.innerHTML),
+        proteinbarlevel: parseInt(proteinbarlevel.innerHTML),
+        preWorkoutlevel: parseInt(PreWorkoutlevel.innerHTML),
+        creatinelevel: parseInt(Creatinelevel),
+        personalTrainerLevel: parseInt(PersonalTrainerlevel.innerHTML),
+        clickerCost: parsedClickerCost,
+        proteinBarCost: parsedProteinBarCost,
+        preWorkoutCost: parsedPreWorkoutCost,
+        creatineCost: parsedCreatineCost,
+        personalTrainerCost: parsedPersonalTrainerCost
+    };
+    localStorage.setItem("combatClickerSave", JSON.stringify(gameData));
+}
+
+function loadGame() {
+    const savedData = JSON.parse(localStorage.getItem("combatClickerSave"));
+    if (savedData) {
+        parsedStrength = savedData.strength;
+        prestigeMultiplier = savedData.prestigeMultiplier;
+        prestigeCount = savedData.prestigeCount;
+        prestigeRequirement = sacedDa
+    }
+}
+
+
 setInterval(() => {
     updateSPC_SPS();
     parsedStrength += sps / 10
