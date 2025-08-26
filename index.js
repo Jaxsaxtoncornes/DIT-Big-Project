@@ -1,4 +1,4 @@
-let strength = document.querySelector('.strength-cost') // hey
+let strength = document.querySelector('.strength-cost')
 let parsedStrength = parseFloat(strength.innerHTML)
 
 let ClickerCost = document.querySelector('.drink-cost')
@@ -49,42 +49,54 @@ function incrementStrength() {
 }
 
 function buyDrink() {
-if (parsedStrength >= parsedClickerCost) {
-    strength.innerHTML = Math.round(parsedStrength -= parsedClickerCost);
 
-    drinklevel.innerHTML ++
+    parsedStrength = Math.round(parsedStrength * 100) / 100;
 
-    parsedClickerIncrease = parseFloat((parsedClickerIncrease * 1.03).toFixed(2));
-    drinkIncrease.innerHTML = parsedClickerIncrease;
+    if (parsedStrength >= parsedClickerCost) {
+        parsedStrength -= parsedClickerCost;
+        strength.innerHTML = Math.round(parsedStrength);
 
-    spc += parsedClickerIncrease;
+        drinklevel.innerHTML++;
 
-    parsedClickerCost *= 1.30;
-    ClickerCost.innerHTML = Math.round(parsedClickerCost)
+        parsedClickerIncrease = parseFloat((parsedClickerIncrease * 1.03).toFixed(2));
+        drinkIncrease.innerHTML = parsedClickerIncrease;
+
+        spc += parsedClickerIncrease;
+
+        parsedClickerCost *= 1.30;
+        ClickerCost.innerHTML = Math.round(parsedClickerCost);
     }
 }
 
 function buyProteinBar() {
-if (parsedStrength >= parsedProteinBarCost) {
-    strength.innerHTML = Math.round(parsedStrength -= parsedProteinBarCost);
 
-    proteinbarlevel.innerHTML ++
+    parsedStrength = Math.round(parsedStrength * 100) / 100;
 
-    parsedProteinBarIncrease = parseFloat((parsedProteinBarIncrease * 1.03).toFixed(2));
-    proteinbarIncrease.innerHTML = parsedProteinBarIncrease;
+    if (parsedStrength >= parsedProteinBarCost) {
+        parsedStrength -= parsedProteinBarCost;
+        strength.innerHTML = Math.round(parsedStrength);
 
-    sps += parsedProteinBarIncrease;
+        proteinbarlevel.innerHTML++;
 
-    parsedProteinBarCost *= 1.30;
-    ProteinBarCost.innerHTML = Math.round(parsedProteinBarCost)
+        parsedProteinBarIncrease = parseFloat((parsedProteinBarIncrease * 1.03).toFixed(2));
+        proteinbarIncrease.innerHTML = parsedProteinBarIncrease;
+
+        sps += parsedProteinBarIncrease;
+
+        parsedProteinBarCost *= 1.30;
+        ProteinBarCost.innerHTML = Math.round(parsedProteinBarCost);
     }
 }
 
 function buyPreWorkout() {
-    if (parsedStrength >= parsedPreWorkoutCost ) {
-        strength.innerHTML = Math.round(parsedStrength -= parsedPreWorkoutCost);
 
-        PreWorkoutlevel.innerHTML ++
+    parsedStrength = Math.round(parsedStrength * 100) / 100;
+
+    if (parsedStrength >= parsedPreWorkoutCost) {
+        parsedStrength -= parsedPreWorkoutCost;
+        strength.innerHTML = Math.round(parsedStrength);
+
+        PreWorkoutlevel.innerHTML++;
 
         parsedPreWorkoutIncrease = parseFloat((parsedPreWorkoutIncrease * 1.03).toFixed(2));
         PreWorkoutIncrease.innerHTML = parsedPreWorkoutIncrease;
@@ -92,15 +104,19 @@ function buyPreWorkout() {
         sps += parsedPreWorkoutIncrease;
 
         parsedPreWorkoutCost *= 1.30;
-        PreWorkoutCost.innerHTML = Math.round(parsedPreWorkoutCost)
-        }
+        PreWorkoutCost.innerHTML = Math.round(parsedPreWorkoutCost);
+    }
 }
 
 function buyCreatine() {
-    if (parsedStrength >= parsedCreatineCost ) {
-        strength.innerHTML = Math.round(parsedStrength -= parsedCreatineCost);
 
-        Creatinelevel.innerHTML ++
+    parsedStrength = Math.round(parsedStrength * 100) / 100;
+
+    if (parsedStrength >= parsedCreatineCost) {
+        parsedStrength -= parsedCreatineCost;
+        strength.innerHTML = Math.round(parsedStrength);
+
+        Creatinelevel.innerHTML++;
 
         parsedCreatineIncrease = parseFloat((parsedCreatineIncrease * 1.03).toFixed(2));
         CreatineIncrease.innerHTML = parsedCreatineIncrease;
@@ -108,15 +124,19 @@ function buyCreatine() {
         sps += parsedCreatineIncrease;
 
         parsedCreatineCost *= 1.30;
-        CreatineCost.innerHTML = Math.round(parsedCreatineCost)
-        }
+        CreatineCost.innerHTML = Math.round(parsedCreatineCost);
+    }
 }
 
 function buyPersonalTrainer() {
-    if (parsedStrength >= parsedPersonalTrainerCost ) {
-        strength.innerHTML = Math.round(parsedStrength -= parsedPersonalTrainerCost);
+    
+    parsedStrength = Math.round(parsedStrength * 100) / 100;
 
-        PersonalTrainerlevel.innerHTML ++
+    if (parsedStrength >= parsedPersonalTrainerCost) {
+        parsedStrength -= parsedPersonalTrainerCost;
+        strength.innerHTML = Math.round(parsedStrength);
+
+        PersonalTrainerlevel.innerHTML++;
 
         parsedPersonalTrainerIncrease = parseFloat((parsedPersonalTrainerIncrease * 1.03).toFixed(2));
         PersonalTrainerIncrease.innerHTML = parsedPersonalTrainerIncrease;
@@ -124,8 +144,9 @@ function buyPersonalTrainer() {
         sps += parsedPersonalTrainerIncrease;
 
         parsedPersonalTrainerCost *= 1.30;
-        PersonalTrainerCost.innerHTML = Math.round(parsedPersonalTrainerCost)
-        }
+        PersonalTrainerCost.innerHTML = Math.round(parsedPersonalTrainerCost);
+    }
+
 }
 
 function prestige() {
@@ -156,15 +177,19 @@ function prestige() {
         parsedPersonalTrainerCost = 10000;
 
         parsedClickerIncrease = 1;
-        parsedProteinBarIncrease = 2;
-        parsedPreWorkoutIncrease = 6;
-        parsedCreatineIncrease = 20;
-        parsedPersonalTrainerIncrease = 50;
+        drinkIncrease.innerHTML = parsedClickerIncrease;
 
-        strength.innerHTML = Math.round(parsedStrength);
-        spcText.innerHTML = Math.round(spc);
-        spsText.innerHTML = Math.round(sps);
-        prestigeText.innerHTML = prestigeCount;
+        parsedProteinBarIncrease = 2;
+        proteinbarIncrease.innerHTML = parsedProteinBarIncrease;
+
+        parsedPreWorkoutIncrease = 6;
+        PreWorkoutIncrease.innerHTML = parsedPreWorkoutIncrease;
+
+        parsedCreatineIncrease = 20;
+        CreatineIncrease.innerHTML = parsedCreatineIncrease;
+
+        parsedPersonalTrainerIncrease = 50;
+        PersonalTrainerIncrease.innerHTML = parsedPersonalTrainerIncrease;
 
         prestigeRequirement = Math.round(prestigeRequirement * 1.5)
 
@@ -173,10 +198,16 @@ function prestige() {
     } else {
         alert(`You need ${prestigeRequirement} strength to prestige!`)
     }
+
+    strength.innerHTML = Math.round(parsedStrength);
+    spcText.innerHTML = Math.round(spc);
+    spsText.innerHTML = Math.round(sps);
+    prestigeText.innerHTML = prestigeCount;
 }
 
 setInterval(() => {
     parsedStrength += sps / 10
+    parsedStrength = Math.round(parsedStrength * 100) / 100;
     strength.innerHTML = Math.round(parsedStrength)
     spcText.innerHTML = Math.round(spc)
     spsText.innerHTML = Math.round(sps);
