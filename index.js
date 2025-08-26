@@ -154,12 +154,17 @@ function prestige() {
         parsedPreWorkoutCost = 850;
         parsedCreatineCost = 3350;
         parsedPersonalTrainerCost = 10000;
-        
+
         parsedClickerIncrease = 1;
         parsedProteinBarIncrease = 2;
         parsedPreWorkoutIncrease = 6;
         parsedCreatineIncrease = 20;
         parsedPersonalTrainerIncrease = 50;
+
+        strength.innerHTML = Math.round(parsedStrength);
+        spcText.innerHTML = Math.round(spc);
+        spsText.innerHTML = Math.round(sps);
+        prestigeText.innerHTML = prestigeCount;
 
         prestigeRequirement = Math.round(prestigeRequirement * 1.5)
 
