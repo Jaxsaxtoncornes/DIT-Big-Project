@@ -1,4 +1,4 @@
-let strength = document.querySelector('.strength-cost')
+let strength = document.querySelector('.strength-cost') // hey
 let parsedStrength = parseFloat(strength.innerHTML)
 
 let ClickerCost = document.querySelector('.drink-cost')
