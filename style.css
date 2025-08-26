@@ -139,7 +139,13 @@ body {
 }
 
 .top-buttons button {
-    padding: ;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .top-buttons button:hover {
