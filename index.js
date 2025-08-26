@@ -288,6 +288,12 @@ function loadGame() {
     }
 }
 
+function resetSave() {
+    localStorage.removeItem("combatClickerSave");
+    alert("Save reset! The page will reload.");
+    location.reload();
+}
+
 
 setInterval(() => {
     updateSPC_SPS();
