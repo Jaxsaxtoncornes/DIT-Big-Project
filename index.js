@@ -14,10 +14,10 @@ let proteinbarIncrease = document.querySelector('.proteinbar-increase')
 let parsedProteinBarIncrease = parseFloat(proteinbarIncrease.innerHTML)
 
 let PreWorkoutCost = document.querySelector('.proteinbar-cost')
-let parsedPreWorkoutCost = parseFloat(ProteinBarCost.innerHTML)
+let parsedPreWorkoutCost = parseFloat(PreWorkoutCost.innerHTML)
 let PreWorkoutlevel = document.querySelector('.proteinbar-level')
 let PreWorkoutIncrease = document.querySelector('.proteinbar-increase')
-let parsedPreWorkoutIncrease = parseFloat(proteinbarIncrease.innerHTML)
+let parsedPreWorkoutIncrease = parseFloat(PreWorkoutIncreaseIncrease.innerHTML)
 let spc = 1;
 
 let sps = 0;
@@ -64,7 +64,7 @@ function buyPreWorkout() {
 
         PreWorkoutlevel.innerHTML ++
 
-        parsedProteinBarIncrease = parseFloat((parsedPreWorkoutIncrease * 1.03).toFixed(2));
+        parsedPreWorkoutIncrease = parseFloat((parsedPreWorkoutIncrease * 1.03).toFixed(2));
         PreWorkoutIncrease.innerHTML = parsedPreWorkoutIncrease;
 
         sps += parsedPreWorkoutIncrease;
