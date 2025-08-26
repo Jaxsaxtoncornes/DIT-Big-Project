@@ -13,11 +13,11 @@ let proteinbarlevel = document.querySelector('.proteinbar-level')
 let proteinbarIncrease = document.querySelector('.proteinbar-increase')
 let parsedProteinBarIncrease = parseFloat(proteinbarIncrease.innerHTML)
 
-let PreWorkoutCost = document.querySelector('.proteinbar-cost')
+let PreWorkoutCost = document.querySelector('.preworkout-cost')
 let parsedPreWorkoutCost = parseFloat(PreWorkoutCost.innerHTML)
-let PreWorkoutlevel = document.querySelector('.proteinbar-level')
-let PreWorkoutIncrease = document.querySelector('.proteinbar-increase')
-let parsedPreWorkoutIncrease = parseFloat(PreWorkoutIncreaseIncrease.innerHTML)
+let PreWorkoutlevel = document.querySelector('.preworkout-level')
+let PreWorkoutIncrease = document.querySelector('.preworkout-increase')
+let parsedPreWorkoutIncrease = parseFloat(PreWorkoutIncrease.innerHTML)
 let spc = 1;
 
 let sps = 0;
