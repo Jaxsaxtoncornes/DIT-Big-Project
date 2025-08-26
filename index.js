@@ -259,15 +259,15 @@ function loadGame() {
     const savedData = JSON.parse(localStorage.getItem("combatClickerSave"));
     if (savedData) {
         parsedStrength = savedData.strength;
-        prestigeMultiplier = savedData.prestigeMultiplier;
+        prestigeMultiplier = savedData.prestige;
         prestigeCount = savedData.prestigeCount;
         prestigeRequirement = savedData.prestigeRequirement;
 
-        drinklevel = savedData.drinklevel;
-        proteinbarlevel = savedData.proteinbarlevel;
-        PreWorkoutlevel = savedData.preWorkoutlevel;
-        Creatinelevel = savedData.creatinelevel;
-        PersonalTrainerlevel = savedData.personalTrainerLevel;
+        drinklevel.innerHTML = savedData.drinklevel;
+        proteinbarlevel.innerHTML = savedData.proteinbarlevel;
+        PreWorkoutlevel.innerHTML = savedData.preWorkoutlevel;
+        Creatinelevel.innerHTML = savedData.creatinelevel;
+        PersonalTrainerlevel.innerHTML = savedData.personalTrainerLevel;
 
         parsedClickerCost = savedData.clickerCost;
         parsedProteinBarCost = savedData.proteinBarCost;
