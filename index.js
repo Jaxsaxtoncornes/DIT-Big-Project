@@ -31,6 +31,10 @@ let PersonalTrainerlevel = document.querySelector('.personaltrainer-level')
 let PersonalTrainerIncrease = document.querySelector('.personaltrainer-increase')
 let parsedPersonalTrainerIncrease = parseFloat(PersonalTrainerIncrease.innerHTML)
 
+let prestigeMultiplier = 1;
+let prestigeRequirment = 10000;
+let prestige = 0;
+
 let spcText = document.getElementById("spc-text")
 let spsText = document.getElementById("sps-text")
 
@@ -121,6 +125,13 @@ function buyPersonalTrainer() {
         parsedPersonalTrainerCost *= 1.30;
         PersonalTrainerCost.innerHTML = Math.round(parsedPersonalTrainerCost)
         }
+}
+
+function prestige() {
+    if (parsedStrength >= prestigeRequirment) {
+        prestigeCount++;
+        prestige
+    }
 }
 
 setInterval(() => {
