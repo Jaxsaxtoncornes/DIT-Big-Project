@@ -244,7 +244,7 @@ function saveGame() {
         drinklevel: parseInt(drinklevel.innerHTML),
         proteinbarlevel: parseInt(proteinbarlevel.innerHTML),
         preWorkoutlevel: parseInt(PreWorkoutlevel.innerHTML),
-        creatinelevel: parseInt(Creatinelevel),
+        creatinelevel: parseInt(Creatinelevel.innerHTML),
         personalTrainerLevel: parseInt(PersonalTrainerlevel.innerHTML),
         clickerCost: parsedClickerCost,
         proteinBarCost: parsedProteinBarCost,
