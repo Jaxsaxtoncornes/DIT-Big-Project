@@ -44,6 +44,8 @@ let spc = 1;
 
 let sps = 0;
 
+loadGame();
+
 function updateSPC_SPS() {
     spc = 1 * prestigeMultiplier + parsedClickerIncrease * parseInt(drinklevel.innerHTML)
     sps = parsedProteinBarIncrease * parseInt(proteinbarlevel.innerHTML)
@@ -259,7 +261,30 @@ function loadGame() {
         parsedStrength = savedData.strength;
         prestigeMultiplier = savedData.prestigeMultiplier;
         prestigeCount = savedData.prestigeCount;
-        prestigeRequirement = sacedDa
+        prestigeRequirement = savedData.prestigeRequirement;
+
+        drinklevel = savedData.drinklevel;
+        proteinbarlevel = savedData.proteinbarlevel;
+        PreWorkoutlevel = savedData.preWorkoutlevel;
+        Creatinelevel = savedData.creatinelevel;
+        PersonalTrainerlevel = savedData.personalTrainerLevel;
+
+        parsedClickerCost = savedData.clickerCost;
+        parsedProteinBarCost = savedData.proteinBarCost;
+        parsedPreWorkoutCost = savedData.preWorkoutCost;
+        parsedCreatineCost = savedData.creatineCost;
+        parsedPersonalTrainerCost = savedData.personalTrainerCost;
+
+        strength.innerHTML = parsedStrength.toFixed(2);
+        ClickerCost.innerHTML = parsedClickerCost;
+        ProteinBarCost.innerHTML = parsedProteinBarCost;
+        PreWorkoutCost.innerHTML = parsedPreWorkoutCost;
+        CreatineCost.innerHTML = parsedCreatineCost;
+        PersonalTrainerCost.innerHTML = parsedPersonalTrainerCost;
+
+        spcText.innerHTML = spc.toFixed(2);
+        spsText.innerHTML = sps.toFixed(2);
+        prestigeText.innerHTML = prestigeCount;
     }
 }
 
@@ -273,3 +298,5 @@ setInterval(() => {
     spsText.innerHTML = sps.toFixed(2);
     prestigeText.innerHTML = prestigeCount;
 }, 100)
+
+setInterval(saveGame, 10000);
