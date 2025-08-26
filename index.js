@@ -19,6 +19,18 @@ let PreWorkoutlevel = document.querySelector('.preworkout-level')
 let PreWorkoutIncrease = document.querySelector('.preworkout-increase')
 let parsedPreWorkoutIncrease = parseFloat(PreWorkoutIncrease.innerHTML)
 
+let CreatineCost = document.querySelector('.creatine-cost')
+let parsedCreatineCost = parseFloat(CreatineCost.innerHTML)
+let Creatinelevel = document.querySelector('.creatine-level')
+let CreatineIncrease = document.querySelector('.creatine-increase')
+let parsedCreatineIncrease = parseFloat(CreatineIncrease.innerHTML)
+
+let PersonalTrainerCost = document.querySelector('.personaltrainer-cost')
+let parsedPersonalTrainerCost = parseFloat(PersonalTrainerCost.innerHTML)
+let PersonalTrainerlevel = document.querySelector('.personaltrainer-level')
+let PersonalTrainerIncrease = document.querySelector('.personaltrainer-increase')
+let parsedPersonalTrainerIncrease = parseFloat(PersonalTrainerIncrease.innerHTML)
+
 let spcText = document.getElementById("spc-text")
 let spsText = document.getElementById("sps-text")
 
@@ -76,6 +88,38 @@ function buyPreWorkout() {
 
         parsedPreWorkoutCost *= 1.30;
         PreWorkoutCost.innerHTML = Math.round(parsedPreWorkoutCost)
+        }
+}
+
+function buyCreatine() {
+    if (parsedStrength >= parsedCreatineCost ) {
+        strength.innerHTML = Math.round(parsedStrength -= parsedCreatineCost);
+
+        Creatinelevel.innerHTML ++
+
+        parsedCreatineIncrease = parseFloat((parsedCreatineIncrease * 1.03).toFixed(2));
+        CreatineIncrease.innerHTML = parsedCreatineIncrease;
+
+        sps += parsedCreatineIncrease;
+
+        parsedCreatineCost *= 1.30;
+        CreatineCost.innerHTML = Math.round(parsedCreatineCost)
+        }
+}
+
+function buyPersonalTrainer() {
+    if (parsedStrength >= parsedPersonalTrainerCost ) {
+        strength.innerHTML = Math.round(parsedStrength -= parsedPersonalTrainerCost);
+
+        PersonalTrainerlevel.innerHTML ++
+
+        parsedPersonalTrainerIncrease = parseFloat((parsedPersonalTrainerIncrease * 1.03).toFixed(2));
+        PersonalTrainerIncrease.innerHTML = parsedPersonalTrainerIncrease;
+
+        sps += parsedPersonalTrainerIncrease;
+
+        parsedPersonalTrainerCost *= 1.30;
+        PersonalTrainerCost.innerHTML = Math.round(parsedPersonalTrainerCost)
         }
 }
 
